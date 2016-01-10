@@ -62,8 +62,22 @@ istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && c
 
 **With Jasmine:**
 
+**pre Jasmine 2.0** or using ` jasmine-node ` specifically
+
 ```sh
 istanbul cover jasmine-node --captureExceptions spec/ && cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage && rm -rf ./coverage
+```
+
+**with Jasmine 2.0**  note : you may want to install jasmine globally ` npm i -g jasmine `
+
+```sh
+istanbul cover jasmine spec/ && cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage && rm -rf ./coverage
+```
+
+Jasmine 2 in package.json script
+
+```sh
+istanbul cover jasmine spec/ && cat ./coverage/lcov.info | codacy-coverage && rm -rf ./coverage
 ```
 
 ### [Grunt](http://gruntjs.com/)
